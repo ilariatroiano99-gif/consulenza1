@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carmen Provetta | Specialista Finanza Agevolata - Incentivi Impresa</title>
+
+    <!-- Google Fonts: Inter for Body, Poppins for Headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for clean SVG icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Brand Colors */
+            --primary-blue: #003468;
+            --brand-teal: #00858f;
+            --brand-cyan: #6cd9db;
+            --brand-gradient: linear-gradient(135deg, var(--brand-teal), var(--primary-blue));
+            
+            /* UI Palette */
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            
+            /* Shadows & Effects */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 20px -2px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px -5px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-blue);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .logo-box {
+            height: 35px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-box svg {
+            height: 100%;
+            width: auto;
+        }
+
+        .nav-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            background: var(--bg-light);
+            padding: 6px 16px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 60px 5% 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 133, 143, 0.08), transparent 40%),
+                        radial-gradient(circle at 10% 80%, rgba(0, 52, 104, 0.05), transparent 40%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 2.25rem;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-content h1 span {
+            color: var(--brand-teal);
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-image {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-image img {
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            border: 10px solid white;
+            transition: var(--transition);
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 20px;
+            background: var(--brand-teal);
+            border-radius: 50px;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-book {
+            background: var(--brand-gradient);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px -5px rgba(0, 133, 143, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 15px 35px -5px rgba(0, 133, 143, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .btn-book i {
+            font-size: 0.9em;
+        }
+
+        /* --- STATS SECTION --- */
+        .stats {
+            background: var(--primary-blue);
+            padding: 80px 5%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            color: var(--bg-white);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .stat-card {
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card h2 {
+            font-size: 4rem;
+            color: var(--brand-cyan);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .stat-card p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        /* --- FEATURES SECTION --- */
+        .features {
+            padding: 100px 5%;
+            background: var(--bg-light);
+        }
+
+        .grid-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .f-card {
+            padding: 50px 40px;
+            background: var(--bg-white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .f-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--brand-teal);
+        }
+
+        .f-icon {
+            width: 72px;
+            height: 72px;
+            background: rgba(0, 133, 143, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: var(--brand-teal);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .f-card:hover .f-icon {
+            background: var(--brand-teal);
+            color: white;
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .f-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .f-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .check-list {
+            margin-top: 20px;
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .check-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .check-list li::before {
+            content: '';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--brand-teal);
+        }
+
+        /* --- BOOKING SECTION --- */
+        .booking-section {
+            padding: 100px 5%;
+            background: var(--bg-white);
+        }
+
+        .booking-card {
+            background: linear-gradient(rgba(0, 52, 104, 0.9), rgba(0, 52, 104, 0.9)), 
+                        url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000') center/cover;
+            color: white;
+            padding: 80px 40px;
+            border-radius: 40px;
+            box-shadow: var(--shadow-lg);
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-card h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .booking-card p {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 45px;
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 80px 5% 40px;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+        }
+
+        /* --- ANIMATIONS --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- MEDIA QUERIES --- */
+        @media (min-width: 968px) {
+            nav {
+                padding: 15px 8%;
+            }
+
+            .hero {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                padding: 120px 8%;
+                gap: 80px;
+            }
+
+            .hero-content {
+                flex: 1.2;
+                margin: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-image {
+                flex: 0.8;
+            }
+
+            .stats {
+                grid-template-columns: repeat(3, 1fr);
+                padding: 100px 8%;
+                border-radius: 60px;
+                margin: -60px 8% 0;
+                box-shadow: var(--shadow-lg);
+                z-index: 2;
+            }
+
+            .grid-features {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+
+            .booking-card {
+                padding: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo-box">
+            <svg viewBox="0 0 4032 634" xmlns="http://www.w3.org/2000/svg">
+                <g><rect x="596.064" y="201.918" width="57.986" height="215.278" style="fill:#003468;" /></g>
+                <g><path d="M902.185,417.196l-11.458,0c-7.769,0 -13.802,-1.432 -18.056,-4.34c-4.297,-2.995 -9.331,-7.639 -15.104,-13.889l-110.937,-119.792l-0,138.021l-56.25,0l-0,-190.625c-0,-16.406 8.897,-24.653 26.736,-24.653l13.889,0c9.114,0 16.059,1.303 20.833,3.82c4.731,2.561 9.549,6.597 14.41,12.153l101.562,109.548l0,-125.521l55.903,0l-0,193.056c-0,14.844 -7.205,22.222 -21.528,22.222Z" style="fill:#003468;" /></g>
+                <g><path d="M1171.91,417.196l-105.209,0c-21.875,0 -41.449,-4.514 -58.68,-13.541c-17.144,-9.028 -30.643,-21.572 -40.452,-37.674c-9.852,-16.189 -14.757,-34.983 -14.757,-56.424c0,-21.397 4.905,-40.147 14.757,-56.25c9.809,-16.059 23.308,-28.646 40.452,-37.673c17.231,-9.115 36.805,-13.716 58.68,-13.716l105.209,0l-0,55.382l-109.202,0c-9.983,0 -18.923,2.214 -26.91,6.598c-7.899,4.427 -14.062,10.546 -18.576,18.402c-4.514,7.9 -6.771,16.971 -6.771,27.257c0,10.2 2.257,19.228 6.771,27.084c4.514,7.769 10.677,13.889 18.576,18.402c7.987,4.428 16.927,6.598 26.91,6.598l109.202,-0l-0,55.555Z" style="fill:#003468;" /></g>
+                <g><path d="M1408.66,332.127l-127.257,-0l0,-46.007l127.257,-0l0,46.007Zm2.604,85.069l-206.944,0l-0,-215.278l206.597,0l0,55.382l-148.611,0l-0,104.341l148.958,-0l0,55.555Z" style="fill:#003468;" /></g>
+                <g><path d="M1656.71,417.196l-11.458,0c-7.769,0 -13.802,-1.432 -18.056,-4.34c-4.296,-2.995 -9.331,-7.639 -15.104,-13.889l-110.937,-119.792l-0,138.021l-56.25,0l-0,-190.625c-0,-16.406 8.897,-24.653 26.736,-24.653l13.889,0c9.114,0 16.059,1.303 20.833,3.82c4.731,2.561 9.549,6.597 14.41,12.153l101.562,109.548l0,-125.521l55.903,0l0,193.056c0,14.844 -7.205,22.222 -21.528,22.222Z" style="fill:#003468;" /></g>
+                <g><path d="M1839.81,417.196l-57.986,0l-0,-159.896l-79.167,0l-0,-55.382l216.146,0l-0,55.382l-78.993,0l-0,159.896Z" style="fill:#003468;" /></g>
+                <g><rect x="1943.63" y="201.918" width="57.986" height="215.278" style="fill:#003468;" /></g>
+                <g><path d="M2172.32,417.196l-13.194,0c-11.459,0 -20.096,-5.295 -25.868,-15.972l-109.896,-199.306l65.278,0l77.083,145.834l77.083,-145.834l65.278,0l-110.243,199.306c-5.556,10.677 -14.063,15.972 -25.521,15.972Z" style="fill:#003468;" /></g>
+                <g><rect x="2329.53" y="201.918" width="57.986" height="215.278" style="fill:#00858f;" /></g>
+                <g><path d="M2734.95,417.196l-57.465,0l-31.771,-138.368l-37.5,117.882c-3.949,13.672 -12.977,20.486 -27.083,20.486l-17.535,0c-14.149,0 -23.22,-6.814 -27.257,-20.486l-37.326,-120.139l-31.771,140.625l-57.292,0l43.75,-190.625c1.736,-9.114 5.035,-15.495 9.896,-19.097c4.861,-3.689 10.938,-5.556 18.229,-5.556l24.132,0c14.106,0 23.264,7.032 27.431,21.007l39.062,128.646l38.716,-128.646c4.166,-13.975 13.237,-21.007 27.257,-21.007l24.132,0c7.291,0 13.368,1.867 18.229,5.556c4.861,3.602 8.246,9.983 10.243,19.097l43.923,190.625Z" style="fill:#00858f;" /></g>
+                <g><path d="M2900.15,363.898l-68.923,-0l-0,-51.389l69.791,-0c7.726,-0 14.236,-2.474 19.445,-7.466c5.208,-5.078 7.812,-11.718 7.812,-19.965c0,-8.333 -2.604,-15.017 -7.812,-20.139c-5.209,-5.078 -11.719,-7.639 -19.445,-7.639l-86.284,0l-0,159.896l-57.639,0l-0,-215.278l143.055,0c16.754,0 31.511,3.473 44.271,10.417c12.847,6.858 22.96,16.32 30.382,28.472c7.378,12.066 11.111,26.172 11.111,42.361c0,15.886 -3.733,29.862 -11.111,42.014c-7.422,12.153 -17.535,21.658 -30.382,28.473c-12.76,6.857 -27.517,10.243 -44.271,10.243Z" style="fill:#00858f;" /></g>
+                <g><path d="M3257.8,417.196l-75.348,0l-43.055,-54.687l-51.042,-0l0,-50.348l74.132,0c7.986,0 14.497,-2.473 19.618,-7.465c5.078,-5.078 7.639,-11.719 7.639,-19.965c0,-8.333 -2.561,-14.974 -7.639,-19.965c-5.121,-4.948 -11.632,-7.466 -19.618,-7.466l-90.625,0l0,159.896l-57.639,0l0,-215.278l148.264,0c16.537,0 31.163,3.429 43.924,10.243c12.847,6.728 22.916,16.103 30.208,28.125c7.292,12.066 10.938,26.129 10.938,42.188c-0,16.319 -3.993,30.729 -11.98,43.229c-7.899,12.413 -18.533,21.832 -31.944,28.299l54.167,63.194Z" style="fill:#00858f;" /></g>
+                <g><path d="M3482.32,332.127l-127.257,-0l-0,-46.007l127.257,-0l-0,46.007Zm2.604,85.069l-206.944,0l-0,-215.278l206.597,0l0,55.382l-148.611,0l-0,104.341l148.958,-0l0,55.555Z" style="fill:#00858f;" /></g>
+                <g><path d="M3676.73,417.196l-163.542,0l0,-55.555l160.938,-0c4.167,-0 7.552,-1.259 10.243,-3.82c2.648,-2.517 3.993,-6.12 3.993,-10.764c0,-4.6 -1.345,-8.246 -3.993,-10.937c-2.691,-2.648 -6.076,-3.993 -10.243,-3.993l-94.618,-0c-13.325,-0 -25.174,-2.691 -35.59,-8.16c-10.33,-5.556 -18.49,-13.194 -24.48,-22.917c-5.902,-9.722 -8.854,-21.007 -8.854,-33.854c0,-12.934 2.952,-24.349 8.854,-34.201c5.99,-9.809 14.15,-17.448 24.48,-22.917c10.416,-5.425 22.265,-8.16 35.59,-8.16l163.542,0l-0,55.382l-160.938,0c-4.167,0 -7.552,1.216 -10.069,3.646c-2.561,2.431 -3.82,5.99 -3.82,10.59c0,4.428 1.259,7.943 3.82,10.591c2.517,2.691 5.902,3.993 10.069,3.993l94.618,-0c13.542,-0 25.434,2.778 35.764,8.333c10.417,5.469 18.576,13.108 24.479,22.917c5.99,9.852 9.028,21.18 9.028,34.028c-0,13.194 -3.038,24.739 -9.028,34.548c-5.903,9.853 -14.062,17.535 -24.479,23.09c-10.33,5.469 -22.222,8.16 -35.764,8.16Z" style="fill:#00858f;" /></g>
+                <g><path d="M4031.28,417.196l-62.847,0l-17.882,-33.16l-101.042,0l24.479,-46.006l52.084,-0l-36.806,-69.098l-78.819,148.264l-63.889,0l109.896,-199.305c5.989,-10.634 14.626,-15.973 25.868,-15.973l13.194,0c11.198,0 19.835,5.339 25.868,15.973l109.896,199.305Z" style="fill:#00858f;" /></g>
+            </svg>
+        </div>
+        <div class="nav-info">
+            <div class="nav-name">Carmen Provetta</div>
+        </div>
+    </nav>
+
+    <header class="hero reveal">
+        <div class="hero-content">
+            <h1>Ottieni il massimo dai <span>Bandi 2026</span> con Carmen.</h1>
+            <p>Specialista in finanza agevolata. Carmen ti guida nella selezione delle migliori opportunità per ridurre il costo dei tuoi investimenti aziendali.</p>
+            <a href="#prenota" class="btn-book">
+                PRENOTA CONSULENZA
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="hero-image">
+            <img src="https://berqwp-cdn.sfo3.cdn.digitaloceanspaces.com/cache/www.incentivimpresa.it/wp-content/uploads/2025/10/carmen-provetta.jpg?bwp" alt="Carmen Provetta">
+        </div>
+    </header>
+
+    <section class="stats" id="counter-section">
+        <div class="stat-card reveal">
+            <h2 class="num" data-val="500">0</h2>
+            <p>Imprese Affiancate</p>
+        </div>
+        <div class="stat-card reveal" style="transition-delay: 0.1s;">
+            <h2 class="num" data-val="92">0</h2>
+            <p>% Pratiche Approvate</p>
+        </div>
+        <div class="stat-card reveal" style="transition-delay: 0.2s;">
+            <h2 class="num" data-val="10">0</h2>
+            <p>Anni di Esperienza</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="grid-features">
+            <div class="f-card reveal">
+                <div class="f-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Strategia Mirata</h3>
+                <p>Analisi tecnica per individuare il bando perfetto per la tua categoria.</p>
+                <ul class="check-list">
+                    <li>Analisi fattibilità</li>
+                    <li>Scelta bando ottimale</li>
+                </ul>
+            </div>
+            <div class="f-card reveal" style="transition-delay: 0.1s;">
+                <div class="f-icon">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <h3>Zero Burocrazia</h3>
+                <p>Gestione integrale: dal caricamento della domanda alla rendicontazione finale.</p>
+                <ul class="check-list">
+                    <li>Invio telematico</li>
+                    <li>Rendicontazione</li>
+                </ul>
+            </div>
+            <div class="f-card reveal" style="transition-delay: 0.2s;">
+                <div class="f-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Risultati Concreti</h3>
+                <p>Ottenimento del contributo nel minor tempo possibile con supporto continuo.</p>
+                <ul class="check-list">
+                    <li>Massima efficienza</li>
+                    <li>Success-fee garantita</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="prenota" class="booking-section">
+        <div class="booking-card reveal">
+            <h2>Pianifica la tua Strategia</h2>
+            <p>Scegli la data per la tua consulenza strategica di 60 minuti direttamente nel calendario di Carmen.</p>
+            <a href="https://www.incentivimpresa.it/?fluent-booking=calendar&host=carmen" class="btn-book">
+                VEDI CALENDARIO
+                <i class="fas fa-calendar-alt"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div style="font-weight: 600; margin-bottom: 10px;">Incentivi Impresa</div>
+        <p>© 2026 Incentivi Impresa | Carmen Provetta Specialista Finanza Agevolata</p>
+    </footer>
+
+    <script>
+        // Counter Animation
+        function animateValue(obj, start, end, duration, suffix, prefix) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = prefix + Math.floor(progress * (end - start) + start) + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Intersection Observer for Reveal & Counters
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    if (entry.target.id === 'counter-section') {
+                        const nums = entry.target.querySelectorAll('.num');
+                        if (!entry.target.dataset.animated) {
+                            animateValue(nums[0], 0, 500, 2000, '+', '');
+                            animateValue(nums[1], 0, 92, 2000, '%', '');
+                            animateValue(nums[2], 0, 10, 2000, '', '+');
+                            entry.target.dataset.animated = "true";
+                        }
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        observer.observe(document.querySelector('#counter-section'));
+    </script>
+</body>
+
+</html>
